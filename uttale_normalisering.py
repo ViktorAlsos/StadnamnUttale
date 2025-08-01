@@ -1,17 +1,17 @@
 import os
 import re
 import openpyxl
-
-basedir = os.path.dirname(__file__)
-path = os.path.join(basedir, '1800 - Nordland 14.06.2023, redigert av AiN .xlsx')
-
-import openpyxl
 import shutil
 import os
 
-base, ext = os.path.splitext(path)
+basedir = os.path.dirname(__file__)
+og_path = os.path.join(basedir, '1800 - Nordland 14.06.2023, redigert av AiN .xlsx')
+
+
+
+base, ext = os.path.splitext(og_path)
 copy_file_path = f"{base}_copy{ext}"
-shutil.copy2(path, copy_file_path)
+shutil.copy2(og_path, copy_file_path)
 print(f"Copied file to: {copy_file_path}")
 
 # Load the copied workbook
@@ -24,9 +24,11 @@ col_idx = 11  # Column 11 = 'K'
 for row in ws.iter_rows(min_row=2, min_col=col_idx, max_col=col_idx):
     cell = row[0]
     if cell.value:
+
         fixed = cell.value
         fixed = re.sub(r'[=@*<>_]', '', fixed)
         fixed = fixed.strip()
+    
 
         fixed = fixed.replace('`',"'")
         fixed = fixed.replace('²','ɳ')
@@ -40,6 +42,8 @@ for row in ws.iter_rows(min_row=2, min_col=col_idx, max_col=col_idx):
         fixed = fixed.replace('¬', 'ʎ')
         fixed = fixed.replace('½', 'c')
         fixed = fixed.replace('«', 'ɭ')
+        # fixed = fixed.replace('¥', 'œ')
+        # fixed = fixed.replace('™','m')
         if len(fixed) > 1:
             fixed = fixed.replace('?', "'")
 
@@ -78,8 +82,22 @@ def unique_chars(path):
     print(''.join(sorted(unique_chars)))
 
 
+def find_cells_with_char(path, char):
+    wb = openpyxl.load_workbook(path)
+    ws = wb.active
+
+    with open(f"eksempler/eksempler_{char}.txt", "w", encoding="utf-8") as fil:
+
+        for row in ws.iter_rows(min_row=2):
+            if row[10].value:
+                if char in row[10].value:
+                    fil.write(f'{row[6].value.strip()} - {row[10].value.strip()}\n')
+
 
 # Save the modified copy
 wb.save(copy_file_path)
 print(f"Changes saved to: {copy_file_path}")
+
+
 # unique_chars(copy_file_path)
+# find_cells_with_char(path=copy_file_path, char='†')
