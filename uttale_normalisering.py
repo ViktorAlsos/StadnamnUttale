@@ -36,20 +36,41 @@ for row in ws.iter_rows(min_row=2, min_col=col_idx, max_col=col_idx):
         fixed = fixed.replace('¼', 'ʈ')
         fixed = fixed.replace('ª', 'ɽ')
         fixed = fixed.replace('¿', 'ʃ')
-        fixed = fixed.replace('¾', 'ʂ')
+        fixed = fixed.replace('¾', 'ʂ') 
         fixed = fixed.replace('®', 'ç')
         fixed = fixed.replace('³', 'ɲ')
         fixed = fixed.replace('¬', 'ʎ')
         fixed = fixed.replace('½', 'c')
         fixed = fixed.replace('«', 'ɭ')
-        # fixed = fixed.replace('¥', 'œ')
-        # fixed = fixed.replace('™','m')
+        fixed = fixed.replace('¤', "/")
+        fixed = fixed.replace('¥', 'œ')
+        fixed = fixed.replace('™','m')
+        fixed = fixed.replace('¡','r')
+        fixed = fixed.replace('…','ɖ')
+        fixed = fixed.replace('†','ɟ')
+
+        #RØST
+        fixed = fixed.replace('×','ɽ') #kanskje l
+        fixed = fixed.replace('¦','c')
+        fixed = fixed.replace('Ð','ʃ')
+        fixed = fixed.replace('Õ','ɲ')
+        fixed = fixed.replace('Ò','ŋ')
+        fixed = fixed.replace('Ã','ç')
+        fixed = fixed.replace('ƒ','ʎ')
+        fixed = fixed.replace('+','ʈ')
+        fixed = fixed.replace('ã','')
+        fixed = fixed.replace('õ','ɳ')
+        fixed = fixed.replace('¢','ɟ')
+
+
         if len(fixed) > 1:
             fixed = fixed.replace('?', "'")
 
 
         if(fixed[0]) == "'":
             fixed = fixed.replace("'", '¹', 1)
+
+
 
         #Disse er til hvis det er flere alternative uttaler. Funker sånn nesten helt. Problem hvis ' er på slutten, men er sluttparantes bak f.eks.
         #Også inconsistent med mellomrom format.
@@ -61,6 +82,9 @@ for row in ws.iter_rows(min_row=2, min_col=col_idx, max_col=col_idx):
             
         fixed = fixed.replace('"', '²')
 
+        # fixed = re.sub(r"(?<=å)('+)(?=\w)", lambda m: "ɟ" * len(m.group(1)), fixed, flags=re.UNICODE)
+        # Dette dekker for mange tilfeller som ikke skal være ɟ
+
         ws.cell(row=row[0].row, column=col_idx).value = fixed
 
 
@@ -68,7 +92,7 @@ for row in ws.iter_rows(min_row=2, min_col=col_idx, max_col=col_idx):
 
 def unique_chars(path):
 
-    wb = openpyxl.load_workbook(copy_file_path)
+    wb = openpyxl.load_workbook(path)
     ws = wb.active
 
     unique_chars = set()
@@ -100,4 +124,6 @@ print(f"Changes saved to: {copy_file_path}")
 
 
 # unique_chars(copy_file_path)
-# find_cells_with_char(path=copy_file_path, char='†')
+# find_cells_with_char(path=copy_file_path, char='ã')
+# find_cells_with_char(path=copy_file_path, char='õ')
+# find_cells_with_char(path=copy_file_path, char='¢')

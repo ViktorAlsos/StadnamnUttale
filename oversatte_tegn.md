@@ -32,6 +32,8 @@
 
 - " ² dersom det står før et ord
 
+- ' ɟ dersom det står etter en å og før en annen bokstav (ofte n)
+
 ### Foreløpig ubrukte/usikre
 
 h¬ ʎ̥ (ustemt palatal lateral) -- ev blir <hʎ> teiknet for denne lyden, men ein kan jo skifte ut sekvensen, om ein vil
@@ -51,18 +53,18 @@ h¬ ʎ̥ (ustemt palatal lateral) -- ev blir <hʎ> teiknet for denne lyden, men 
 
 #### Røst kommune har mye rart
 
-- ¦ Ytterråsa - ²y¦erå:sa
-- ƒ Kumannskallen - ²ku:maÕska:ƒ~Õ, Litlhola - ²lihƒhåla, Kilda - ²Ãiƒa
-- Õ Kumannskallen - ²ku:maÕska:ƒ~Õ, Daudmannsskjæret - ²døumaÕÐære
-- × Skauholmen - ²skøuhå×men, Monsholmen - ²månshå×men
-- Ð Daudmannsskjæret - ²døumaÕÐære, Skitten - ²Ðet~n
-- Ã Litl-Brattskjæret - ²liÃbratÐære, Kilda - ²Ãiƒa
-- Ò Langskjæret - ²laÒÐære, Andbakkskjæret - ²a:ÕbakÐære
-- ð Slumpskjæret - ²ð×ompÐære
-- õ Hernykskallen - ²hæ:õykska:ƒ~Õ
-- õ Søre Årnhansaskallen - ¹søråõ'hansaskaƒ~Õ
-- ã Vardskjæret - ²va:ãÐære
-- ¢ Oddskjæran - ²å¢Ðæran, Oddbøen - ²å¢bø:en
+- ¦ Ytterråsa - ²y¦erå:sa Oversatt: c
+- ƒ Kumannskallen - ²ku:maÕska:ƒ~Õ, Litlhola - ²lihƒhåla, Kilda - ²Ãiƒa Oversatt: ʎ
+- Õ Kumannskallen - ²ku:maÕska:ƒ~Õ, Daudmannsskjæret - ²døumaÕÐære, Andbakkskjæret - ²a:ÕbakÐære Oversatt: ɲ
+- × Skauholmen - ²skøuhå×men, Monsholmen - ²månshå×men Oversatt: ɽ eller bare l
+- Ð Daudmannsskjæret - ²døumaÕÐære, Skitten - ²Ðet~n Oversatt: ʃ
+- Ã Litl-Brattskjæret - ²liÃbratÐære, Kilda - ²Ãiƒa Oversatt: ç
+- Ò Langskjæret - ²laÒÐære Oversatt: ŋ
+- ð Slumpskjæret - ²ð×ompÐære (Bør erstattes manuelt ettersom det er samiske navn med tegnet) Oversatt: ʂ \*\*\*\*
+- õ Hernykskallen - ²hæ:õykska:ƒ~Õ, Søre Årnhansaskallen - ¹søråõ'hansaskaƒ~Õ Oversatt: ɳ
+- ã Vardskjæret - ²va:ãʃære, Måsskjæret - ²må:ʃære, ²måãʃ- Bare 3 tilfeller totalt. Fjernes.
+- ¢ Oddskjæran - ²å¢Ðæran, Oddbøen - ²å¢bø:e Bare 3 tilfeller. Oversatt: ɟ
+- "+" Mortengrunnen - ²må+~õgru:ɲ~ Oversatt: ʈ
 
 ## Merknad fra programmet
 
@@ -73,3 +75,5 @@ nyttar ‘ (teikn nr 039) og “ (teikn nr 034) for tostavingstonelag. Og ~ (til
 nr 0152) er brukt for å vise stavingsberande (syllabisk) forlenging, som i
 nordnorsk “mannen”.
 Teiknet ^ står for circumflex, t.d. (i) ^fø:r – det vil seie: (i) Før(e).
+
+## Tegnsett i excel er UTF-8
